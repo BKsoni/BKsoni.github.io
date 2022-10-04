@@ -19,7 +19,13 @@ let video;
 let flippedVideo;
 // To store the classification
 let label = "";
-
+let constraint = {
+    video:{
+        facingMode: {
+        exact: 'environment'
+        }
+    }
+}
 // Load the model first
 function preload() {
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
@@ -28,7 +34,7 @@ function preload() {
 function setup() {
   createCanvas(320, 260);
   // Create the video
-  video = createCapture(VIDEO);
+  video = createCapture(VIDEO,constraint);
   video.size(320, 240);
   video.hide();
 
