@@ -22,7 +22,7 @@ let label = "";
 let constraint = {
     video:{
         facingMode: {
-        exact: 'user'
+        exact: 'environment'
         }
     }
 }
