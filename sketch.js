@@ -29,6 +29,7 @@ let constraint = {
 // Load the model first
 function preload() {
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+  getLocation()
 }
 
 function setup() {
@@ -73,4 +74,12 @@ function gotResult(error, results) {
   label = results[0].label;
   // Classifiy again!
   classifyVideo();
+}
+
+function getLocation()
+{
+  let location = [0.0,0.0];
+  navigator.geolocation.getCurrentPosition(location[0], location[1])
+  console.log(location)
+  //api call
 }
