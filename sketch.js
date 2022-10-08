@@ -90,6 +90,7 @@ function captureImg()
   {
     saveFrames('out', 'png', 1, 1, data => {
       storeItem('Img'+x, data[0].imageData);
+      storeItem('Caption'+x, label)
     });
     x++;
   }
